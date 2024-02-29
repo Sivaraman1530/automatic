@@ -1,0 +1,7 @@
+{
+  "name": "automatic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
