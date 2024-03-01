@@ -2,6 +2,7 @@ import { BundleInfo, CapacitorUpdater } from '@capgo/capacitor-updater'
 import { Dialog } from '@capacitor/dialog'
 
 const InitializeApp= ()=> {
+  let data:any|BundleInfo
     console.log("stage 1")
     CapacitorUpdater.addListener('updateAvailable', async (res) => {
         try {
@@ -9,7 +10,11 @@ const InitializeApp= ()=> {
             title: 'Update Available',
             message: `Version ${res.bundle.version} is available. The app will update now`,
           })
-          CapacitorUpdater.set(res.bundle)
+          data = await CapacitorUpdater.download({
+            version: '9.0.0',
+            url: 'https://github.com/Sivaraman1530/sample-test/archive/refs/heads/master.zip',
+            })
+          CapacitorUpdater.set(data)
           console.log("our_bundle",res.bundle)
         }
         catch (error) {
