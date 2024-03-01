@@ -11,7 +11,7 @@ const InitializeApp= ()=> {
             message: `Version ${res.bundle.version} is available. The app will update now`,
           })
           data = await CapacitorUpdater.download({
-            version: '11.0.0',
+            version: '12.0.0',
             url: 'https://github.com/Sivaraman1530/sample-test/archive/refs/heads/master.zip',
             })
           CapacitorUpdater.set(data)
